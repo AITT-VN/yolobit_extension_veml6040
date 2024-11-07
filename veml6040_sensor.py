@@ -1,4 +1,5 @@
 import machine, time
+from yolobit import *
 from micropython import const
 from math import exp, isnan
 from utility import say
@@ -66,7 +67,7 @@ def rgb2hsv(r, g, b):
 class VEML6040Sensor:
 
     def __init__(self, address=_VEML6040_I2C_ADDRESS):
-        self._i2c = machine.SoftI2C(scl=20, sda=19, freq=100000)
+        self._i2c = machine.SoftI2C(scl=pin19.pin, sda=pin20.pin, freq=100000)
         self._addr = address
         self._config = 0
 
