@@ -172,4 +172,14 @@ class VEML6040Sensor:
 
 veml6040_sensor = VEML6040Sensor()
 
+# Hàm kiểm tra giá trị ánh sáng Lux
+def test_lux():
+    veml6040_sensor = VEML6040Sensor()
+    while True:
+        lux_value = veml6040_sensor.get_lux()  # Đọc giá trị Lux từ cảm biến
+        print("Giá trị ánh sáng (Lux):", lux_value)
+        time.sleep(1)  # Đợi 1 giây trước khi đo lại
+
+# Chạy thử hàm kiểm tra Lux
+test_lux()
  
