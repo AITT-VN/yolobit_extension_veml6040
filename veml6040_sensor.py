@@ -133,9 +133,9 @@ class VEML6040Sensor:
     def classify_hue(self):
         hues = {"red": 0, "yellow": 60, "green": 120, "cyan": 180, "blue": 240, "magenta": 300}
         min_brightness = 0
-        # Đọc giá trị HSV
+
         d = self.read_hsv()
-        # Xử lý nhận diện màu
+
         if d['val'] > min_brightness:
             key, val = min(hues.items(), key=lambda x: min(360 - abs(d['hue'] - x[1]), abs(d['hue'] - x[1])))
             return key
@@ -172,14 +172,12 @@ class VEML6040Sensor:
 
 veml6040_sensor = VEML6040Sensor()
 
-# Hàm kiểm tra giá trị ánh sáng Lux
 def test_lux():
     veml6040_sensor = VEML6040Sensor()
     while True:
-        lux_value = veml6040_sensor.get_lux()  # Đọc giá trị Lux từ cảm biến
+        lux_value = veml6040_sensor.get_lux()  
         print("Giá trị ánh sáng (Lux):", lux_value)
-        time.sleep(1)  # Đợi 1 giây trước khi đo lại
+        time.sleep(1) 
 
-# Chạy thử hàm kiểm tra Lux
 test_lux()
  

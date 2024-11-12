@@ -2,7 +2,5 @@
   <category name="ÁNH SÁNG" colour="#ae00ae" icon="palette">
     <block type="veml6040_sensor_read_color" />
     <block type="veml6040_sensor_detect_color" />
-    <!-- <block type="veml6040_sensor _read_lux" />
-    <block type="veml6040_sensor _read_cct" /> -->
   </category>
 </xml>
