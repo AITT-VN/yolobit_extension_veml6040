@@ -81,8 +81,7 @@ class VEML6040Sensor:
         self._config = config
 
     def read(self, commandCode):
-        self._i2c.writeto(self._addr, bytes([commandCode]))
-        data = self._i2c.readfrom(self._addr, 2)
+        data = self._i2c.readfrom_mem(self._addr, commandCode, 2)
         data = data[0] + (data[1]<<8)
 
         return data
@@ -130,7 +129,7 @@ class VEML6040Sensor:
 
         return cct
 
-    def classify_hue(self):
+    def Classify_Hue(self):
         hues = {"red": 0, "yellow": 60, "green": 120, "cyan": 180, "blue": 240, "magenta": 300}
         min_brightness = 0
 
