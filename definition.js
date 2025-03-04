@@ -70,7 +70,7 @@ Blockly.Blocks['veml6040_sensor_detect_color'] = {
 
 Blockly.Python['veml6040_sensor_detect_color'] = function(block) {
   var detectColor = block.getFieldValue('DETECT_COLOR');
-  var code = '(veml6040_sensor.classify_hue() == "' + detectColor + '")';
+  var code = '(veml6040_sensor.Classify_Hue() == "' + detectColor + '")';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
