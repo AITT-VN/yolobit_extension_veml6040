@@ -168,5 +168,4 @@ class VEML6040Sensor:
         d = self.read_rgb()
         return rgb2hsv(d['red'],d['green'],d['blue'])
 
-
 veml6040_sensor = VEML6040Sensor()
