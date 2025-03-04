@@ -170,13 +170,3 @@ class VEML6040Sensor:
 
 
 veml6040_sensor = VEML6040Sensor()
-
-def test_lux():
-    veml6040_sensor = VEML6040Sensor()
-    while True:
-        lux_value = veml6040_sensor.get_lux()  
-        print("Giá trị ánh sáng (Lux):", lux_value)
-        time.sleep(1) 
-
-test_lux()
- 
