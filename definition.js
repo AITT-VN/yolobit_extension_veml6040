@@ -71,6 +71,8 @@ Blockly.Blocks['veml6040_sensor_detect_color'] = {
 Blockly.Python['veml6040_sensor_detect_color'] = function(block) {
   var detectColor = block.getFieldValue('DETECT_COLOR');
   var code = '(veml6040_sensor.Classify_Hue() == "' + detectColor + '")';
+
+  Blockly.Python.definitions_['import_veml6040_sensor'] = 'from veml6040_sensor import *';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
